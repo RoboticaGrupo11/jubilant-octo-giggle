@@ -1,6 +1,6 @@
 # Robótica Taller III
 
-Repositorio que incluye los recursos utilizados por el grupo 11 que da solución al taller 2 "Diseño de un robot diferencial" del curso de robótica.
+Repositorio que incluye los recursos utilizados por el grupo 11 que da solución al taller 3 "Diseño de un robot manipulador" del curso de robótica.
 
 - [Robótica Taller II](#robótica-taller-ii)
 - [Instalación](#instalación)
@@ -41,6 +41,7 @@ Repositorio que incluye los recursos utilizados por el grupo 11 que da solución
 - [Pynput][Pynput]
 - [Rospy][Rospy]
 - [Tkinter][Tkinter]
+- [OpenCV][OpenCV]
 
 ### Paquetes de ROS
 - [rospkg][rospkg]
@@ -48,6 +49,7 @@ Repositorio que incluye los recursos utilizados por el grupo 11 que da solución
 - [std_msgs][std_msgs]
 - [rosserial][rosserial]
 - [differential-drive][differential-drive]
+- [smach][smach]
 
 ### Librerías Arduino
 - [rosserial][rosserial]
@@ -60,7 +62,7 @@ Repositorio que incluye los recursos utilizados por el grupo 11 que da solución
 
 2. Crear un espacio de trabajo de ROS en la Raspberry Pi donde se encuentre instalado el paquete differential-drive.
 
-3.  Crear un espacio de trabajo de ROS en el computador local y descargar el paquete mi_robot_11 dentro de este.
+3.  Crear un espacio de trabajo de ROS en el computador local y descargar el paquete mi_robot_manipulador_11 dentro de este.
 
 # Ejecución
 
@@ -105,12 +107,12 @@ source devel/setup.bash
 2. Ejecutar nodo
 
 ```bash
-rosrun mi_bot_11 punto1.py
+rosrun mi_robot_manipulador_11 punto1.py
 ```
 
 3. Ingresar por consola la velocidad lineal y angular deseada 
 
-4. Utilizar el teclado para mover al robot (w, s, q, e)
+4. Utilizar el teclado para mover al robot (w, s, q, e, x, z, i, k)
 
 ### Punto 2
 1. Dentro del entorno de trabajo de ROS cargar las variables de entorno
@@ -122,14 +124,14 @@ source devel/setup.bash
 2. Ejecutar nodo
 
 ```bash
-rosrun mi_bot_11 punto2.py
+rosrun mi_robot_manipulador_11 punto2.py
 ```
 
 3. En la ventana emergente índicar si se quiere guardar el recorrido que se realizará (en caso de que se quiera guardar el recorrido se debe ejecutar el punto 3 para mover el robot en vez del punto 1)
 
 4. Si se selecciona la opción de guardar el recorrido, entonces, debe seleccionar el nombre y la ubicación deseada
 
-5. Al mover el robot, se comenzará a graficar la posición de esté en tiempo real. Se puede guardar en cualquier momento la gráfica realizada índicando el nombre y la ubicación deseada.
+5. Al mover el manipulador, se comenzará a graficar la posición de esté en tiempo real. Se puede guardar en cualquier momento la gráfica realizada índicando el nombre y la ubicación deseada.
 
 ### Punto 3
 1. Dentro del entorno de trabajo de ROS cargar las variables de entorno
@@ -138,21 +140,11 @@ rosrun mi_bot_11 punto2.py
 source devel/setup.bash
 ```
 
-2. Para que el punto 3 funcione, la interfaz gráfica desarrollada en el punto 2 debe estar corriendo y se debe haber seleccionado que se quiere guardar el recorrido, así:
+2. Correr el nodo correspondiente al punto 3.
 
 ```bash
-rosrun mi_bot_11 punto2.py
+rosrun mi_robot_manipulador_11 punto3.py
 ```
-
-3. Correr el nodo correspondiente al punto 3.
-
-```bash
-rosrun mi_bot_11 punto3.py
-```
-
-4. Utilizar el teclado para mover al robot (w, s, q, e)
-
-5. En el momento que se quiera detener el robot, utilizar control+z. La información relacionada al recorrido se guardó en la ubicación especificada en el punto 2.
 
 ### Punto 4
 
@@ -162,19 +154,11 @@ rosrun mi_bot_11 punto3.py
 source devel/setup.bash
 ```
 
-2. Para que el punto 4 funcione, la interfaz gráfica desarrollada en el punto 2 debe estar corriendo, así:
+2. Correr el nodo correspondiente al punto 4:
 
 ```bash
-rosrun mi_bot_11 punto2.py
+rosrun mi_robot_manipulador_11 punto4.py
 ```
-
-3. Correr el nodo correspondiente al punto 4:
-
-```bash
-rosrun mi_bot_11 punto4.py
-```
-
-4. En la interfaz gráfica seleccionar la opción 'cargar recorrido' y seleccionar el folder relacionado al recorrido que se quiere reproducir.
 
 # Troubleshooting
 En esta sección se encuentra la solución a los problemas que pueden ocurrir al momento de intentar utilizar este paquete.
